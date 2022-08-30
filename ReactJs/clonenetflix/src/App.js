@@ -2,7 +2,7 @@ import React,{ useState, useEffect } from 'react'
 import './App.css'
 import Tmdb from './Tmdb'
 import Header from './components/Header'
-
+import FeaturedMovie from './components/FeaturedMovie'
 
 export default() => {
   const [movieList, setMovieList] = useState([]);
@@ -27,6 +27,10 @@ export default() => {
   return (
     <div className="page">
       <Header black={blackHeader}/>
+
+      {featuredData &&
+        <FeaturedMovie item={featuredData} />
+      }
     </div>
   )
 }
